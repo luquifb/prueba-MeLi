@@ -1,0 +1,60 @@
+.mesh-row {
+  background-color: #ffe600;
+  text-align: center;
+  margin: 0;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.mesh-col-12 {
+  margin: 0 10%;
+}
+
+#header-content {
+  position: relative;
+  padding: 0 0 0 80px;
+}
+
+input[type="text"] {
+  color: #666;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 56px 10px 10px;
+  margin: 0 7px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+img.logo  {
+  float: left;
+  width: 55px;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 3px;
+}
+
+form {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background: #eee;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+img.search-icon {
+  padding: 10px;
+  height: 40px;
+  box-sizing: border-box;
+}
