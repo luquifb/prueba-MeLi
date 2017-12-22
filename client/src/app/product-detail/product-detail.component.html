@@ -1,17 +1,25 @@
-<div class="container">
+<div class="container" *ngIf="item">
 
-<ol class="pagination" *ngIf="item">
+<ol class="pagination">
   <li>{{item.category_id}}</li>
      <span> > </span>
   <li>{{item.title}}</li>
 </ol>
 
-  <section *ngIf="item">
-    <h4>Product info:</h4>
-    <div>
-      <p><strong></strong> <i>{{item.title}}</i></p>
-      <p><strong></strong> <i>${{item.price}}</i></p>
-      <img [src]="item.thumbnail" alt="{{item.title}}">
+  <div class="row items">
+
+    <div class="col-md-8">
+      <img [src]="item.pictures[0].url" alt="{{item.title}}">
+      <h4 class="description-title">Descripción del producto</h4>
+      <p class="description-text">{{ item.descriptions[0].id }}</p>
     </div>
-  </section>
+
+    <div class="col-md-4">
+      <small>{{ item.condition | uppercase }} - {{ item.sold_quantity }} vendidos</small>
+      <h4 class="item-title">{{item.title}}</h4>
+      <h1 class="price">$ {{item.price }}</h1>
+          <button (click)="buyProduct()" class="btn btn-lg btn-primary" role="button">Comprar</button>
+    </div>
+
+  </div>
 </div>

@@ -1,6 +1,6 @@
 .item-detail {
   padding: 16px;
-  color: #999; 
+  color: #999;
 }
 
 /* .item {
@@ -11,8 +11,8 @@
   margin: 16px 10%;
 }
 
-.mesh-col-12 {
-  margin: 0 5%;
+.container {
+  margin: 0 5% 7% 5%;
 }
 
 .items {

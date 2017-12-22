@@ -19,7 +19,7 @@ export class ProductService {
   // }
 
   getProducts() {
-    return this.http.get(`${BASEURL}/sites/MLA/search?q=ipad`)
+    return this.http.get(`${BASEURL}/sites/MLA/search?q=carpas`)
           .map((res) => res.json());
   }
 
