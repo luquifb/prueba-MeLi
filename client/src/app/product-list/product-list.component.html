@@ -1,10 +1,10 @@
-<div class="container-fluid">
-  <ol>
+  <ol class="pagination">
     <li>Celulares</li>
-      >
+       <span> > </span>
     <li>Celulares y Smartphones</li>
   </ol>
 
+  <div class="mesh-col-12">
   <!-- <div class="container">
     <div class="row">
       <ul class="list-group">
@@ -24,19 +24,19 @@
     </div>
   </div> -->
 
-  <div class="row items">
+  <div class="row items" *ngIf="items">
     <div class="col-md-3">
       <img src="assets/Logo_ML@2x.png.png" class="item-img">
     </div>
     <div class="col-md-6">
       <h3 class="price">
-        <b>$ 100</b>
+        <b>{{ items.results._price }}</b>
         <img class="ship-icon" src="assets/ic_shipping.png" alt="">
       </h3>
-      <p class="item-name">Celular Apple Iphone 5s 32GB Blanco</p>
+      <p class="item-name">{{ items.query }}</p>
     </div>
     <div class="col-md-3">
-        <span class="address">Córdoba</span>
+        <span class="address">{{ items.site_id }}</span>
     </div>
   </div>
 </div>
