@@ -1,42 +1,69 @@
-  <ol class="pagination">
-    <li>Celulares</li>
-       <span> > </span>
-    <li>Celulares y Smartphones</li>
-  </ol>
 
   <div class="mesh-col-12">
-  <!-- <div class="container">
-    <div class="row">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <div class="col-md-3">
-            <img src="assets/Logo_ML@2x.png.png" class="item-img" alt="">
-          </div>
-          <div class="col-md-6">
-            <h3 class="price"><b>$ 100</b> <span><img src="assets/ic_shipping.png" alt=""></span></h3>
-            <p class="item-name">Celular Apple Iphone 5s 32GB Blanco</p>
-          </div>
-          <div class="col-md-3">
-            <span class="address">Córdoba</span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div> -->
+    <div *ngIf="items">
 
-  <div class="row items" *ngIf="items">
-    <div class="col-md-3">
-      <img src="assets/Logo_ML@2x.png.png" class="item-img">
-    </div>
-    <div class="col-md-6">
-      <h3 class="price">
-        <b>{{ items.results._price }}</b>
-        <img class="ship-icon" src="assets/ic_shipping.png" alt="">
-      </h3>
-      <p class="item-name">{{ items.query }}</p>
-    </div>
-    <div class="col-md-3">
-        <span class="address">{{ items.site_id }}</span>
-    </div>
+        <ol class="pagination">
+          <li>{{ items.query }}</li>
+            <span> > </span>
+          <li>{{ items.results[0].category_id }}</li>
+            <span> > </span>
+          <li>{{ items.results[0].title }}</li>
+        </ol>
+
+      <div class="row items">
+        <div class="col-md-3">
+          <img [src]="items.results[0].thumbnail" class="item-img">
+        </div>
+        <div class="col-md-6">
+          <h3 class="price">
+            <b>$ {{ items.results[0].price }}</b>
+            <img class="ship-icon" src="assets/ic_shipping.png" alt="">
+          </h3>
+          <a [routerLink]="['../','items', items.results[0].id]" class="item-detail">
+            <p class="item-name">{{ items.results[0].title }}</p>
+          </a>
+        </div>
+        <div class="col-md-3">
+            <span class="address">{{ items.results[0].site_id }}</span>
+            <!-- <span class="address">{{ items.results[0].address }}</span> -->
+        </div>
+      </div>
+
+      <div class="row items">
+        <div class="col-md-3">
+          <img [src]="items.results[0].thumbnail" class="item-img">
+        </div>
+        <div class="col-md-6">
+          <h3 class="price">
+            <b>$ {{ items.results[1].price }}</b>
+            <img class="ship-icon" src="assets/ic_shipping.png" alt="">
+          </h3>
+          <a [routerLink]="['../','items', items.results[1].id]" class="item-detail">
+            <p class="item-name">{{ items.results[1].title }}</p>
+          </a>
+        </div>
+        <div class="col-md-3">
+            <span class="address">{{ items.results[1].site_id }}</span>
+        </div>
+      </div>
+
+      <div class="row items">
+        <div class="col-md-3">
+          <img [src]="items.results[2].thumbnail" class="item-img">
+        </div>
+        <div class="col-md-6">
+          <h3 class="price">
+            <b>$ {{ items.results[2].price }}</b>
+            <img class="ship-icon" src="assets/ic_shipping.png" alt="">
+          </h3>
+          <a [routerLink]="['../','items', items.results[2].id]" class="item-detail">
+            <p class="item-name">{{ items.results[2].title }}</p>
+          </a>
+        </div>
+        <div class="col-md-3">
+            <span class="address">{{ items.results[2].site_id }}</span>
+        </div>
+      </div>
+
+     </div>
   </div>
-</div>

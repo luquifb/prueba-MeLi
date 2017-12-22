@@ -3,7 +3,7 @@
 <ol class="pagination" *ngIf="item">
   <li>{{item.category_id}}</li>
      <span> > </span>
-  <li>Celulares y Smartphones</li>
+  <li>{{item.title}}</li>
 </ol>
 
   <section *ngIf="item">
@@ -11,7 +11,7 @@
     <div>
       <p><strong></strong> <i>{{item.title}}</i></p>
       <p><strong></strong> <i>${{item.price}}</i></p>
-      <img [src]="item.thumbnail" alt="">
+      <img [src]="item.thumbnail" alt="{{item.title}}">
     </div>
   </section>
 </div>

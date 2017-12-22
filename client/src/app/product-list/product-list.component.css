@@ -1,7 +1,12 @@
+.item-detail {
+  padding: 16px;
+  color: #999; 
+}
 
-/* li {
+/* .item {
   border-bottom: solid 1px #eee;
 } */
+
 .pagination {
   margin: 16px 10%;
 }

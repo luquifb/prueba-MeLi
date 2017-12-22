@@ -13,8 +13,9 @@ import { ProductService } from './services/product.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // { path: 'home',  component: MyHomeComponent },
-  // { path: 'about', component: MyAboutComponent }
+  // { path: '/',  component: SearchBoxComponent },
+  { path: 'items?search=',  component: ProductListComponent },
+  { path: 'items/:id', component: ProductDetailComponent }
 ];
 
 @NgModule({

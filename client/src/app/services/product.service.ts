@@ -2,28 +2,32 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { environment }  from '../../environments/environment';
+
+const BASEURL:string = environment.BASEURL;
 
 @Injectable()
 export class ProductService {
-  public BASEURL = 'https://api.mercadolibre.com';
+  // public BASEURL = 'https://api.mercadolibre.com';
   item:object;
 
   constructor(private http: Http) { }
 
+  // getProducts(query) {
+  //   return this.http.get(`${BASEURL}/items?search=${query}`)
+  //         .map((res) => res.json());
+  // }
+
   getProducts() {
-    return this.http.get(`${this.BASEURL}/sites/MLA/items?search=`)
+    return this.http.get(`${BASEURL}/sites/MLA/search?q=ipad`)
           .map((res) => res.json());
   }
 
-  // getProduct(id){
-  //   return this.http.get(`${this.BASEURL}/items/${id}`)
-  //         .map(res => res.json())
-  // }
-
-  getProduct(){
-    return this.http.get(`${this.BASEURL}/items/MLA672160044`)
+  getProduct(id){
+    return this.http.get(`${BASEURL}/items/${id}`)
           .map(res => res.json())
   }
+
 }
 
 // categories: https://api.mercadolibre.com/sites/categories/{category_id}

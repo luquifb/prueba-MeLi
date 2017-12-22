@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-// const Product = require('../models/Product');
+const Product = require('../models/Product');
 // const path = require('path');
 
 // View all items
-router.get('/items' , (req, res, next) => {
+router.get('/items?search=' , (req, res, next) => {
   Product.find()
   .then(results =>res.status(200).json(results))
   .reject (err => console.log(err));
