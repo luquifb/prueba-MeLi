@@ -10,13 +10,17 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductListComponent implements OnInit {
   items:any;
-
+  category;
 
   constructor(private router: Router, public service: ProductService) { }
 
   ngOnInit() {
     this.service.getProducts()
       .subscribe(items => this.items = items);
+
+    this.service.getProductCategory()
+      .subscribe(category_id => this.category = category_id);
+      
   }
 
 }

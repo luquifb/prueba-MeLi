@@ -2,12 +2,20 @@
   <div class="container">
     <div *ngIf="items">
 
-        <ol class="pagination">
+        <!-- <ol class="pagination">
           <li>{{ items.query }}</li>
             <span> > </span>
           <li>{{ items.results[0].category_id }}</li>
             <span> > </span>
           <li>{{ items.results[0].title }}</li>
+        </ol> -->
+
+        <ol class="pagination">
+          <li>{{ category.path_from_root[0].name }}</li>
+             <span> > </span>
+          <li>{{ category.path_from_root[1].name }}</li>
+             <span> > </span>
+          <li>{{ category.path_from_root[2].name }}</li>
         </ol>
 
       <div class="row items">
@@ -24,8 +32,8 @@
           </a>
         </div>
         <div class="col-md-3">
-            <span class="address">{{ items.results[0].site_id }}</span>
-            <!-- <span class="address">{{ items.results[0].address }}</span> -->
+            <!-- <span class="address">{{ items.results[0].site_id }}</span> -->
+            <span class="address">{{ items.results[0].address.state_name }}</span>
         </div>
       </div>
 
@@ -43,7 +51,7 @@
           </a>
         </div>
         <div class="col-md-3">
-            <span class="address">{{ items.results[1].site_id }}</span>
+            <span class="address">{{ items.results[1].address.state_name }}</span>
         </div>
       </div>
 
@@ -61,7 +69,7 @@
           </a>
         </div>
         <div class="col-md-3">
-            <span class="address">{{ items.results[2].site_id }}</span>
+            <span class="address">{{ items.results[2].address.state_name }}</span>
         </div>
       </div>
 

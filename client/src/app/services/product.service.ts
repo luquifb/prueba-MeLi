@@ -19,7 +19,7 @@ export class ProductService {
   // }
 
   getProducts() {
-    return this.http.get(`${BASEURL}/sites/MLA/search?q=carpas`)
+    return this.http.get(`${BASEURL}/sites/MLA/search?q=mochilas`)
           .map((res) => res.json());
   }
 
@@ -28,7 +28,19 @@ export class ProductService {
           .map(res => res.json())
   }
 
-}
+  // getProductDescription(id){
+  //   return this.http.get(`${BASEURL}/items/${id}/description`)
+  //         .map(res => res.json())
+  // }
 
-// categories: https://api.mercadolibre.com/sites/categories/{category_id}
-// https://api.mercadolibre.com/sites/MLA/categories
+  // getProductCategory(id, category_id) {
+  //   return this.http.get(`${BASEURL}/categories/${category_id}`)
+  //         .map((res) => res.json());
+  // }
+
+  getProductCategory() {
+    return this.http.get(`${BASEURL}/categories/MLA3526`)
+          .map((res) => res.json());
+  }
+
+}

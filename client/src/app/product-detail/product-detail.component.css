@@ -10,7 +10,7 @@
 
 .items {
   margin: 0 10% 10% 10%;
-  /* padding: 32px; */
+  padding: 32px;
   border-radius: 4px;
 }
 
@@ -53,5 +53,5 @@ img {
 }
 
 .col-md-8, .col-md-4 {
-  padding: 32px;
+  /* padding: 32px; */
 }
