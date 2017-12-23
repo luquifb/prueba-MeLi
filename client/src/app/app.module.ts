@@ -8,16 +8,20 @@ import { AppComponent } from './app.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { SearchPipe } from './pipes/search.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ProductService } from './services/product.service';
+import { ItemsService } from './services/items.service';
+
+import { SearcherComponent } from './searcher/searcher.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: '',  component: SearchBoxComponent },
-  { path: 'items',  component: ProductListComponent },
-  { path: 'items/:id', component: ProductDetailComponent }
+  { path: 'items?search=',  component: SearchBoxComponent },
+  { path: 'items/:id', component: ProductDetailComponent },
+  // { path: 'search', component: SearcherComponent }
 ];
 
 @NgModule({
@@ -26,8 +30,9 @@ const routes: Routes = [
     SearchBoxComponent,
     ProductListComponent,
     ProductDetailComponent,
-    SearchPipe,
-    CapitalizePipe
+    FilterPipe,
+    CapitalizePipe,
+    SearcherComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ProductService],
+  providers: [ProductService, ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

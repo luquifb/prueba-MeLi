@@ -19,8 +19,8 @@
     <div class="col-md-4">
       <small>{{ item.condition | uppercase }} - {{ item.sold_quantity }} vendidos</small>
       <h4 class="item-title">{{item.title}}</h4>
-      <h1 class="price">$ {{item.price }}</h1>
-          <button (click)="buyProduct()" class="btn btn-lg btn-primary" role="button">Comprar</button>
+      <h1 class="price">{{item.price | currency }}</h1>
+          <button (click)="buyProduct(item.id)" class="btn btn-lg btn-primary" role="button">Comprar</button>
     </div>
 
   </div>

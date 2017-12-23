@@ -2,24 +2,27 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+
 import { environment }  from '../../environments/environment';
 
 const BASEURL:string = environment.BASEURL;
 
 @Injectable()
 export class ProductService {
-  // public BASEURL = 'https://api.mercadolibre.com';
-  item:object;
+
+  // public BASEURL2 = 'https://api.mercadolibre.com';
+  item: Object;
 
   constructor(private http: Http) { }
 
-  // getProducts(query) {
-  //   return this.http.get(`${BASEURL}/items?search=${query}`)
+
+  // getProducts(term) {
+  //   return this.http.get(this.BASEURL2 + this.queryUrl + term)
   //         .map((res) => res.json());
   // }
 
   getProducts() {
-    return this.http.get(`${BASEURL}/sites/MLA/search?q=mochilas`)
+    return this.http.get(`${BASEURL}/sites/MLA/search?q=ipad`)
           .map((res) => res.json());
   }
 

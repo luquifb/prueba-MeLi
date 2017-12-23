@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
-import { ProductService } from '../services/product.service';
+// import { ProductService } from '../services/product.service';
+import { ItemsService } from '../services/items.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,17 +12,17 @@ import { ProductService } from '../services/product.service';
 export class ProductDetailComponent implements OnInit {
   item;
 
-  constructor(private route: ActivatedRoute, public service: ProductService) { }
+  constructor(private route: ActivatedRoute, public service: ItemsService) { }
 
   ngOnInit() {
     this.route.params
       .subscribe(params => {
-        this.getProduct(params['id']);
+        this.seeProduct(params['id']);
       });
   }
 
-  getProduct(id) {
-    this.service.getProduct(id)
+  seeProduct(id) {
+    this.service.seeProduct(id)
       .subscribe((item) => this.item = item);
   }
 
@@ -30,7 +31,7 @@ export class ProductDetailComponent implements OnInit {
   //     .subscribe((item) => this.item = item);
   // }
 
-  buyProduct() {
-    console.log('Quiero este producto!')
+  buyProduct(id) {
+    console.log('Quiero este producto: ' + id)
   }
 }

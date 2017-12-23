@@ -15,12 +15,27 @@ export class ProductListComponent implements OnInit {
   constructor(private router: Router, public service: ProductService) { }
 
   ngOnInit() {
+    // this.service.getProducts()
+    //   .subscribe(items => this.items = items);
+    //
+    // this.service.getProductCategory()
+    //   .subscribe(category_id => this.category = category_id);
+  }
+
+  searchProducts() {
     this.service.getProducts()
       .subscribe(items => this.items = items);
 
-    this.service.getProductCategory()
-      .subscribe(category_id => this.category = category_id);
-      
+      this.service.getProductCategory()
+        .subscribe(category_id => this.category = category_id);
   }
 
+  // searchProducts() {
+  //   console.log("halooo")
+  //   this.service.getProducts()
+  //     .subscribe(items => this.items = items);
+  //
+  //   this.service.getProductCategory()
+  //     .subscribe(category_id => this.category = category_id);
+  // }
 }
