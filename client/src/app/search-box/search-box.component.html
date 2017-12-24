@@ -17,12 +17,21 @@
 </header>
 
 
-<div class="container">
-  <ul *ngIf="results">
+<div class="container" *ngIf="results">
+
+  <ol class="pagination">
+    <!-- <li>{{  }}</li>
+       <span> > </span>
+    <li>{{  }}</li>
+       <span> > </span>
+    <li>{{  }}</li> -->
+  </ol>
+
+  <ul>
     <li *ngFor="let result of results">
         <div class="row items">
           <div class="col-md-3">
-            <img [src]="result.thumbnail" class="item-img">
+            <img [src]="result.thumbnail" class="img-thumbnail item-img">
           </div>
           <div class="col-md-6">
             <h3 class="price">
@@ -37,7 +46,6 @@
               <span class="address">{{ result.address.state_name }}</span>
           </div>
         </div>
-
     </li>
   </ul>
 </div>

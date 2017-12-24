@@ -58,3 +58,77 @@ img.search-icon {
   height: 40px;
   box-sizing: border-box;
 }
+
+
+
+/* product list */
+
+.pagination {
+  margin: 16px 10%;
+
+  ol {
+    list-style-type: none;
+    margin: 16px;
+  }
+
+    ol li {
+      font-size: 14px;
+      display: inline;
+    }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.items {
+  background: #fff;
+  /* margin: 0; */
+  padding: 16px 0;
+  border-radius: 4px;
+  border-bottom: solid 2px #eee;
+}
+
+.item-detail {
+  padding: 16px;
+  color: #666;
+}
+
+.item-img {
+  width: 180px;
+  border-radius: 4px;
+  border: none;
+  margin: 16px;
+}
+
+.price {
+  font-size: 24px;
+  margin-bottom: 32px;
+  margin-left: 0;
+  position: relative;
+  left: 8%;
+  top: 12%;
+}
+
+.ship-icon{
+  margin: 5px;
+}
+
+.item-name {
+  font-size: 18px;
+  margin-left: 0;
+  position: relative;
+  left: 8%;
+  top: 17%;
+}
+
+.address {
+  font-size: 12px;
+  margin-left: 0;
+  position: relative;
+  left: 35%;
+  top: 16%;
+}

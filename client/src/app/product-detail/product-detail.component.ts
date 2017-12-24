@@ -26,8 +26,8 @@ export class ProductDetailComponent implements OnInit {
       .subscribe((item) => this.item = item);
   }
 
-  // getProductDescription(id) {
-  //   this.service.getProductDescription(id)
+  // seeProductDescription(id) {
+  //   this.service.seeProductDescription(id)
   //     .subscribe((item) => this.item = item);
   // }
 

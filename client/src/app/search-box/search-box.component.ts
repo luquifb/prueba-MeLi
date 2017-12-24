@@ -16,17 +16,23 @@ import { Subject } from 'rxjs/Subject';
 //   constructor(private router: Router, public service: ProductService) { }
 //
 //   ngOnInit() {
+//      this.service.getProductCategory()
+//        .subscribe(category_id => this.category = category_id);
 //   }
 //
 //   searchProducts() {
 //     console.log("quiero buscar..")
 //     this.service.getProducts()
 //       .subscribe(items => this.items = items);
+//
+//      this.service.getProductCategory()
+//       .subscribe(category_id => this.category = category_id);
 //   }
 
 export class SearchBoxComponent {
   results: Object;
   searchTerm$ = new Subject<string>();
+  // category;
 
   constructor(private service: ItemsService) {
     this.service.search(this.searchTerm$)
@@ -34,6 +40,6 @@ export class SearchBoxComponent {
         this.results = results.results;
         console.log("entro");
       });
-
     }
+
 }
