@@ -11,13 +11,17 @@ import { ItemsService } from '../services/items.service';
 })
 export class ProductDetailComponent implements OnInit {
   item;
-
+  itemDesc;
+  itemCategory;
+  
   constructor(private route: ActivatedRoute, public service: ItemsService) { }
 
   ngOnInit() {
     this.route.params
       .subscribe(params => {
         this.seeProduct(params['id']);
+        this.seeProductDescription(params['id']);
+        this.getProductCategory(params['category_id']);
       });
   }
 
@@ -26,10 +30,15 @@ export class ProductDetailComponent implements OnInit {
       .subscribe((item) => this.item = item);
   }
 
-  // seeProductDescription(id) {
-  //   this.service.seeProductDescription(id)
-  //     .subscribe((item) => this.item = item);
-  // }
+  seeProductDescription(id) {
+    this.service.seeProductDescription(id)
+      .subscribe((itemDesc) => this.itemDesc = itemDesc);
+  }
+
+  getProductCategory(category_id) {
+    this.service.getProductCategory(category_id)
+      .subscribe((itemCategory) => this.itemCategory = itemCategory);
+  }
 
   buyProduct(id) {
     console.log('Quiero este producto: ' + id)

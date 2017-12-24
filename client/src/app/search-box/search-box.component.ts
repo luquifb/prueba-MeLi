@@ -34,7 +34,7 @@ export class SearchBoxComponent {
   searchTerm$ = new Subject<string>();
   // category;
 
-  constructor(private service: ItemsService) {
+  constructor(private router: Router, private service: ItemsService) {
     this.service.search(this.searchTerm$)
       .subscribe(results => {
         this.results = results.results;

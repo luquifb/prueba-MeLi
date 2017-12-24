@@ -15,7 +15,8 @@ import { ItemsService } from './services/items.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'items?search=',  component: SearchBoxComponent },
+  // { path: 'home',  component: SearchBoxComponent },
+  { path: 'items?search=:query',  component: SearchBoxComponent },
   { path: 'items/:id', component: ProductDetailComponent },
 ];
 

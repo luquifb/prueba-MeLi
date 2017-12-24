@@ -31,9 +31,15 @@ export class ItemsService {
           .map(res => res.json())
   }
 
-  // seeProductDescription(id){
-  //   return this.http.get(`${this.baseUrl}/items/${id}/description`)
-  //         .map(res => res.json())
-  // }
+  seeProductDescription(id){
+    return this.http.get(`${this.baseUrl}/items/${id}/description`)
+          .map(res => res.json())
+  }
+
+  getProductCategory(category_id) {
+    return this.http.get(`${this.baseUrl}/categories/${category_id}`)
+          .map((res) => res.json());
+  }
+
 
 }
