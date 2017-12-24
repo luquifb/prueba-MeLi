@@ -1,18 +1,23 @@
 <div class="container" *ngIf="item">
 
-<ol class="pagination">
+<!-- <ol class="pagination">
   <li>{{ item.category_id }}</li>
      <span> > </span>
   <li>{{ item.category_id[0].name }}</li>
-</ol>
+</ol> -->
+  <ol class="pagination breadcrumb">
+    <li class="breadcrumb-item">{{ item.category_id }}</li>
+    <li class="breadcrumb-item">{{item.title}}</li>
+    <li class="breadcrumb-item">{{ item.condition }}</li>
+  </ol>
 
   <div class="row items">
 
     <div class="col-md-8">
       <img [src]="item.pictures[0].url" alt="{{item.title}}" class="img-fluid">
       <h4 class="description-title">Descripción del producto</h4>
-      <p class="description-text">{{ item.description }}</p>
       <p class="description-text">{{ item.descriptions[0].id }}</p>
+      <!-- <p class="description-text">{{ item.description }}</p> -->
       <!-- <p class="description-text">{{ item.description.plain_text }}</p> -->
 
     </div>
