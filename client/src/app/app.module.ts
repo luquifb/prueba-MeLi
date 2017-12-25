@@ -1,31 +1,32 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
+// Components
 import { AppComponent } from './app.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
-import { FilterPipe } from './pipes/filter.pipe';
+// Pipes
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
-import { ProductService } from './services/product.service';
+// Services
 import { ItemsService } from './services/items.service';
 
-const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // { path: 'home',  component: SearchBoxComponent },
-  { path: 'items?search=:query',  component: SearchBoxComponent },
-  { path: 'items/:id', component: ProductDetailComponent },
-];
+// Routes
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBoxComponent,
+    ProductListComponent,
     ProductDetailComponent,
-    FilterPipe
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ProductService, ItemsService],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

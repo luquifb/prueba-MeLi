@@ -4,11 +4,22 @@ body {
 }
 
 .container {
-  text-align: center;
   /* margin: 0 5%; */
   margin-bottom: 10%;
 }
 
-/* .breadcrumb-item {
+.pagination {
+  margin: 16px 6%;
+  background-color: #eee;
+  padding: 16px 0;
   content: ">";
-} */
+}
+
+ol {
+  list-style-type: none;
+}
+
+ol li {
+  font-size: 14px;
+  display: inline;
+}

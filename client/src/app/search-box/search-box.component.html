@@ -5,9 +5,9 @@
         <img class="logo" src="./assets/Logo_ML@2x.png.png">
       </a>
 
-      <form >
-        <input type="text" name="search" placeholder="Nunca dejes de buscar" (keyup)="searchTerm$.next($event.target.value)" value="">
-          <button class="search-button">
+      <form>
+        <input type="text" name="search" placeholder="Nunca dejes de buscar" (keyup)="searchTerm$.next($event.target.value)">
+          <button class="search-button" [routerLink]="['../','items?search=']">
             <img class="search-icon" src="./assets/ic_Search@2x.png.png">
           </button>
       </form>
@@ -19,12 +19,11 @@
 
 <div class="container" *ngIf="results">
 
-  <ol class="pagination">
-    <!-- <li>{{  }}</li>
-       <span> > </span>
-    <li>{{  }}</li>
-       <span> > </span>
-    <li>{{  }}</li> -->
+  <ol class="pagination breadcrumb" *ngIf="category">
+    <li class="breadcrumb-item">{{ category.path_from_root[0].name }}</li>
+    <li class="breadcrumb-item">{{ category.path_from_root[1].name }}</li>
+    <li class="breadcrumb-item">{{ category.path_from_root[2].name }}</li>
+    <li class="breadcrumb-item">{{ category.path_from_root[3].name }}</li>
   </ol>
 
   <ul>

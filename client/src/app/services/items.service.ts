@@ -36,10 +36,14 @@ export class ItemsService {
           .map(res => res.json())
   }
 
-  getProductCategory(category_id) {
-    return this.http.get(`${this.baseUrl}/categories/${category_id}`)
+  // getProductCategory(category_id) {
+  //   return this.http.get(`${this.baseUrl}/categories/${category_id}`)
+  //         .map((res) => res.json());
+  // }
+
+  getProductCategory() {
+    return this.http.get(`${this.baseUrl}/categories/MLA31356`)
           .map((res) => res.json());
   }
-
 
 }
