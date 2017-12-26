@@ -1,22 +1,18 @@
-.mesh-row {
+/* Header */
+.head {
   background-color: #ffe600;
   text-align: center;
-  margin: 0;
-  padding: 7px;
+  padding: 9px 13.5%;
   box-sizing: border-box;
 }
 
-.mesh-col-12 {
-  margin: 0 6%;
-}
-
-#header-content {
+.header-content {
   position: relative;
   padding: 0 0 0 80px;
 }
 
 input[type="text"] {
-  color: #666;
+  color: #999;
   font-size: 18px;
   width: 100%;
   border: none;
@@ -30,10 +26,9 @@ input[type="text"] {
 img.logo  {
   float: left;
   width: 55px;
-  display: block;
   position: absolute;
   left: 5px;
-  top: 3px;
+  top: 2px;
 }
 
 form {
@@ -60,20 +55,19 @@ img.search-icon {
 }
 
 
-
-/* product list */
+/* Product list */
+.mobile {
+  margin-bottom: 16px;
+}
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: left;
 }
 
 .items {
   background: #fff;
-  /* margin: 0; */
-  padding: 16px 0;
   border-radius: 4px;
   border-bottom: solid 2px #eee;
 }
@@ -93,10 +87,8 @@ ul {
 .price {
   font-size: 24px;
   margin-bottom: 32px;
-  margin-left: 0;
   position: relative;
-  left: 8%;
-  top: 12%;
+  top: 13%;
 }
 
 .ship-icon{
@@ -105,16 +97,15 @@ ul {
 
 .item-name {
   font-size: 18px;
-  margin-left: 0;
   position: relative;
-  left: 8%;
-  top: 17%;
+  color: #333;
 }
 
 .address {
   font-size: 12px;
-  margin-left: 0;
   position: relative;
-  left: 35%;
+  left: 30%;
   top: 16%;
+  color: #666;
+
 }

@@ -1,10 +1,10 @@
 <div class="container" *ngIf="item">
 
   <ol class="pagination breadcrumb" *ngIf="itemCategory">
-    <li class="breadcrumb-item">{{ itemCategory.path_from_root[0].name }}</li>
-    <li class="breadcrumb-item">{{ itemCategory.path_from_root[1].name }}</li>
-    <li class="breadcrumb-item">{{ itemCategory.path_from_root[2].name }}</li>
-    <li class="breadcrumb-item">{{ itemCategory.path_from_root[3].name }}</li>
+    <li class="breadcrumb-item text">{{ itemCategory.path_from_root[0].name }}</li>
+    <li class="breadcrumb-item text">{{ itemCategory.path_from_root[1].name }}</li>
+    <li class="breadcrumb-item text">{{ itemCategory.path_from_root[2].name }}</li>
+    <li class="breadcrumb-item text">{{ itemCategory.path_from_root[3].name }}</li>
   </ol>
 
   <div class="row items">
@@ -12,15 +12,14 @@
     <div class="col-md-8">
       <img [src]="item.pictures[0].url" alt="{{item.title}}" class="img-fluid">
       <h4 class="description-title">Descripción del producto</h4>
-      <!-- <p class="description-text">{{ item.descriptions[0].id }}</p> -->
       <p *ngIf="itemDesc" class="description-text">{{ itemDesc.plain_text }}</p>
     </div>
 
-    <div class="col-md-4 fixed">
-      <small>{{ item.condition | capitalize }} - {{ item.sold_quantity }} vendidos</small>
+    <div class="col-md-4">
+      <small id="item-condition" class="text">{{ item.condition | capitalize }} - {{ item.sold_quantity }} vendidos</small>
       <h4 class="item-title">{{item.title}}</h4>
       <h1 class="price">{{item.price | currency }}</h1>
-          <button (click)="buyProduct(item.id)" class="btn btn-lg btn-primary" role="button">Comprar</button>
+          <button (click)="buyProduct(item.id)" class="btn btn-lg btn-primary btn-block" role="button">Comprar</button>
     </div>
 
   </div>

@@ -4,22 +4,25 @@ body {
 }
 
 .container {
-  /* margin: 0 5%; */
   margin-bottom: 10%;
+  padding: 0 5%;
 }
 
 .pagination {
-  margin: 16px 6%;
+  margin: 16px 0;
   background-color: #eee;
-  padding: 16px 0;
-  content: ">";
-}
-
-ol {
   list-style-type: none;
+  /* content: ">"; */
 }
 
-ol li {
+.text {
   font-size: 14px;
-  display: inline;
+  color: #999;
+}
+
+.col-md-8,
+.col-md-6,
+.col-md-4,
+.col-md-3 {
+  padding: 16px;
 }
