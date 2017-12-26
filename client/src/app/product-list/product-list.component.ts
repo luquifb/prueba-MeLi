@@ -10,22 +10,9 @@ import { ItemsService } from '../services/items.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  items:any;
-  category;
 
-  constructor(private router: Router,private route: ActivatedRoute, public service: ItemsService) { }
+  constructor() { }
 
-  ngOnInit() {
-    // this.service.searchEntries(term)
-    //   .subscribe(items => this.items = items);
-  //   this.route.params
-  //     .subscribe(params => {
-  //       this.searchEntries(params['term']);
-  }
-
-  // seeProducts(term) {
-  //   this.service.searchEntries(term)
-  //     .subscribe(items => this.items = items);
-  // }
+  ngOnInit() {}
 
 }

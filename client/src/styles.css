@@ -1,4 +1,5 @@
 body {
+  font-family: 'NimbusSanL';
   background-color: #eee;
   margin: 0;
 }
@@ -12,7 +13,6 @@ body {
   margin: 16px 0;
   background-color: #eee;
   list-style-type: none;
-  /* content: ">"; */
 }
 
 .text {

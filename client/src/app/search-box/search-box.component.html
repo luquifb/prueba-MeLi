@@ -6,7 +6,7 @@
       </a>
 
       <form>
-        <input type="text" name="search" placeholder="Nunca dejes de buscar" (keyup)="searchTerm$.next($event.target.value)">
+        <input type="text" [(ngModel)]="search" name="search" placeholder="Nunca dejes de buscar" (keyup)="searchTerm$.next($event.target.value)">
           <button class="search-button" [routerLink]="['../','items?search=']">
             <img class="search-icon" src="./assets/ic_Search@2x.png.png">
           </button>
@@ -15,7 +15,6 @@
     </div>
   </div>
 </header>
-
 
 <div class="container" *ngIf="results">
 
@@ -37,7 +36,8 @@
                 {{ result.price | currency }}
                 <img *ngIf="result.shipping.free_shipping == true" class="ship-icon" src="assets/ic_shipping.png" alt="Envio gratis">
             </h3>
-            <a [routerLink]="['../','items', result.id]" class="item-detail">
+            <a href="items/{{result.id}}" class="item-detail">
+            <!-- <a [routerLink]="['../','items', result.id]" class="item-detail"> -->
               <p class="item-name">{{ result.title }}</p>
             </a>
           </div>
