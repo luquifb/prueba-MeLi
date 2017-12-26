@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  BASEURL: 'https://api.mercadolibre.com'
+  BASEURL: ''
 };
